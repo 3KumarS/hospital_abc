@@ -1,4 +1,7 @@
-const NavbarFooter = () => {
+import React from "react"
+
+
+const Footer = () => {
     return (
         <>
             <footer className="w-full h-auto">
@@ -207,4 +210,4 @@ const NavbarFooter = () => {
 }
 
 
-export default NavbarFooter
+export default Footer

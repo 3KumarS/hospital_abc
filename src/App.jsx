@@ -1,11 +1,19 @@
 import { useState } from 'react'
-import NavbarFooter from "./Components/NavbarFooter.jsx"
+import Footer from "./Components/Footer/Footer.jsx"
 import './App.css'
-import CardFooter from './Components/CardFooter.jsx'
-import Disclaimer from './Components/Disclaimer.jsx'
-import CrouselFooter from './Components/CrouselFooter.jsx'
-import CardBox from './Components/CardBox.jsx'
-import Navbar from './Components/Navbar.jsx'
+import CardFooter from './Components/Home/CardFooter.jsx'
+import Disclaimer from './Components/Home/Disclaimer.jsx'
+import CrouselFooter from "./Components/Footer/Footer.jsx"
+import CardBox from './Components/Home/CardBox.jsx'
+import Navbar from './Components/Header/Header.jsx'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Layout from './Layout.jsx'
+import Header from './Components/Header/Header.jsx'
+import Contact from './Pages/Contact.jsx'
+import Home from './Components/Home/Home.jsx'
+
+
 
 
 function App() {
@@ -13,12 +21,20 @@ function App() {
 
   return (
     <>
-      <Navbar></Navbar>
-      <CardBox></CardBox>
-      <CrouselFooter></CrouselFooter>
-      <Disclaimer></Disclaimer>
-      <CardFooter></CardFooter>
-      <NavbarFooter></NavbarFooter>
+      <Router>
+        <div className="App">
+          <Header />          
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path="/cardbox" element={<CardBox />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/crouselfooter" element={<CrouselFooter />} />
+            <Route path="/disclaimer" element={<Disclaimer />} />
+            <Route path="/footer" element={<Footer />} />
+          </Routes>
+          <Footer />
+        </div>
+      </Router>
     </>
   )
 }

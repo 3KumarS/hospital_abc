@@ -1,5 +1,4 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCalendar,faHospital,faSearchPlus,faDesktop,faMemory} from '@fortawesome/free-solid-svg-icons';
+import React from 'react';
 
 
 const CardFooter = ()=> {
